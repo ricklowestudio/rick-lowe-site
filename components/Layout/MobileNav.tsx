@@ -26,10 +26,10 @@ function MobileNav({
 			<Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
 				<div className="flex items-center justify-between">
 					<Link href="#" className="-m-1.5 p-1.5">
-						<span className="sr-only">Your Company</span>
+						<span className="sr-only">Rick Lowe</span>
 						<Image
 							className="h-8 w-auto"
-							src="/logo.jpeg"
+							src="/images/logo.jpeg"
 							alt="Rick Lowe Logo"
 							width={179}
 							height={42}

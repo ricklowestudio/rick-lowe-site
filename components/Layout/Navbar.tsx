@@ -11,8 +11,13 @@ function Navbar({
 	return (
 		<nav className="flex items-center justify-between pr-6" aria-label="Global">
 			<a href="#" className="-m-1.5 p-1.5">
-				<span className="sr-only">Your Company</span>
-				<Image src="/logo.jpeg" alt="Rick Lowe Logo" width={179} height={42} />
+				<span className="sr-only">/Rick Lowe</span>
+				<Image
+					src="/images/logo.jpeg"
+					alt="Rick Lowe Logo"
+					width={179}
+					height={42}
+				/>
 			</a>
 			<button
 				type="button"
