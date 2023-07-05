@@ -1,3 +1,4 @@
+import { Header } from "@/components";
 import "../../styles/globals.css";
 import { Nunito } from "next/font/google";
 
@@ -16,10 +17,8 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={nunito.className}>
-				<header>
-					
-				</header>
-				{children}
+				<Header />
+				<div className="mx-auto max-w-7xl px-6 lg:px-8 pt-6">{children}</div>
 			</body>
 		</html>
 	);
