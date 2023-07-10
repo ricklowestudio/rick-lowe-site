@@ -1,20 +1,10 @@
 import { defineType, defineField } from "sanity";
 
 export default defineType({
-	name: "timeline",
-	title: "Timeline Page",
+	name: "project",
+	title: "Projects Page",
 	type: "document",
 	fields: [
-		defineField({
-			name: "startPeriod",
-			title: "Start Period",
-			type: "string",
-		}),
-		defineField({
-			name: "endPeriod",
-			title: "End Period",
-			type: "string",
-		}),
 		defineField({
 			name: "title",
 			title: "Title",
