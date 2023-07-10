@@ -60,9 +60,10 @@ export default defineConfig({
 						// 	),
 
 						// Regular document types
-						...S.documentTypeListItems().filter(
-							(listItem) => !singletonTypes.has(listItem.getId())
-						),
+						...S.documentTypeListItems().filter((listItem) => {
+							const id: any = listItem.getId();
+							return !singletonTypes.has(id);
+						}),
 					]),
 		}),
 		// Vision is a tool that lets you query your content with GROQ in the studio
