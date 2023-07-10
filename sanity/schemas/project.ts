@@ -16,6 +16,11 @@ export default defineType({
 			type: "blockContent",
 		}),
 		defineField({
+			name: "videoEmbed",
+			title: "Video Embed",
+			type: "videoEmbed",
+		}),
+		defineField({
 			name: "image",
 			title: "Image",
 			type: "image",

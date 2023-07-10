@@ -71,5 +71,11 @@ export default defineType({
 				},
 			],
 		}),
+		defineArrayMember({
+			type: "imageGallery",
+		}),
+		defineArrayMember({
+			type: "videoEmbed",
+		}),
 	],
 });

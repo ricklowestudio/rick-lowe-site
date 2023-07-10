@@ -25,11 +25,6 @@ export default defineType({
 			title: "Media",
 			type: "blockContent",
 		}),
-		defineField({
-			name: "embedVideo",
-			title: "Embed Video",
-			type: "url",
-		}),
 	],
 	preview: {
 		select: {

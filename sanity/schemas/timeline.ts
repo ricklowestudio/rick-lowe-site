@@ -8,12 +8,12 @@ export default defineType({
 		defineField({
 			name: "startPeriod",
 			title: "Start Period",
-			type: "string",
+			type: "number",
 		}),
 		defineField({
 			name: "endPeriod",
 			title: "End Period",
-			type: "string",
+			type: "number",
 		}),
 		defineField({
 			name: "title",
@@ -44,6 +44,11 @@ export default defineType({
 					title: "Caption",
 				},
 			],
+		}),
+		defineField({
+			name: "link",
+			title: "Video Embed Link",
+			type: "url",
 		}),
 	],
 	preview: {
