@@ -1,8 +1,9 @@
-import { Header } from "@/components";
-import "../../styles/globals.css";
 import { Nunito } from "next/font/google";
 
+import { Header } from "@/components";
 import { homeMeta } from "@/constants";
+
+import "../../styles/globals.css";
 
 const nunito = Nunito({ subsets: ["latin"] });
 

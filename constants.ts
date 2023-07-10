@@ -28,6 +28,11 @@ export const navigation: Navigation[] = [
 	},
 ];
 
+export const studioMeta: Metadata = {
+	title: "Rick Lowe - Content Studio",
+	description: "The content studio for Rick Lowe's official website.",
+};
+
 export const homeMeta: Metadata = {
 	title: "Rick Lowe - Official Website",
 	description:

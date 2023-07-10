@@ -43,21 +43,21 @@ export default defineConfig({
 		deskTool({
 			structure: (S) =>
 				S.list()
-					.title("Content")
+					.title("Website Page Content")
 					.items([
 						// singleton type has a list item with a custom child
-						S.listItem().title("About").id("about").child(
+						S.listItem().title("About Page").id("about").child(
 							// Instead of rendering a list of documents, we render a single
 							// document, specifying the `documentId` manually to ensure
 							// that we're editing the single instance of the document
 							S.document().schemaType("about").documentId("about")
 						),
-						// S.listItem()
-						// 	.title("Paintings")
-						// 	.id("paintings")
-						// 	.child(
-						// 		S.document().schemaType("paintings").documentId("paintings")
-						// 	),
+						S.listItem()
+							.title("Paintings Page")
+							.id("paintings")
+							.child(
+								S.document().schemaType("paintings").documentId("paintings")
+							),
 
 						// Regular document types
 						...S.documentTypeListItems().filter((listItem) => {
