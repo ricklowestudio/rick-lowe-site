@@ -14,7 +14,7 @@ import { myTheme } from "./sanity/theme";
 
 const singletonActions = new Set(["publish", "discardChanges", "restore	"]);
 
-const singletonTypes = new Set(["about", "paintings"])
+const singletonTypes = new Set(["about", "paintings"]);
 
 export default defineConfig({
 	basePath: "/studio",
@@ -23,30 +23,47 @@ export default defineConfig({
 	projectId,
 	dataset,
 	// Add and edit the content schema in the './sanity/schema' folder
-	schema,
+	schema: {
+		...schema,
+		// filter out singleton types from the global "new document" menu
+		templates: (templates) =>
+			templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+
+		document: {
+			// for singleton types, filter out actions that are not explicitly allowed in the `singletonActions` list defined above
+			actions: (input: any, context: any) =>
+				singletonTypes.has(context.schemaType)
+					? input.filter(({ action }: { action: any }) =>
+							singletonActions.has(action)
+					  )
+					: input,
+		},
+	},
 	plugins: [
 		deskTool({
-			structure: (S) => 
-			S.list().title("Content").items([
+			structure: (S) =>
+				S.list()
+					.title("Content")
+					.items([
+						// singleton type has a list item with a custom child
+						S.listItem().title("About").id("about").child(
+							// Instead of rendering a list of documents, we render a single
+							// document, specifying the `documentId` manually to ensure
+							// that we're editing the single instance of the document
+							S.document().schemaType("about").documentId("about")
+						),
+						// S.listItem()
+						// 	.title("Paintings")
+						// 	.id("paintings")
+						// 	.child(
+						// 		S.document().schemaType("paintings").documentId("paintings")
+						// 	),
 
-				// singleton type has a list item with a custom child
-				S.listItem().title("About").id("about").child(
-					// Instead of rendering a list of documents, we render a single
-					// document, specifying the `documentId` manually to ensure
-					// that we're editing the single instance of the document
-					S.document()
-						.schemaType("about")
-						.documentId("about")
-				),
-				S.listItem().title("Paintings").id("paintings").child(
-					S.document().schemaType('paintings').documentId('paintings')
-				),
-
-				// Regular document types
-				S.documentTypeListItem("author").title("Authors"),
-				S.documentTypeListItem("category").title("Categories"),
-				S.documentTypeListItem("post").title("Posts"),
-			]),
+						// Regular document types
+						...S.documentTypeListItems().filter(
+							(listItem) => !singletonTypes.has(listItem.getId())
+						),
+					]),
 		}),
 		// Vision is a tool that lets you query your content with GROQ in the studio
 		// https://www.sanity.io/docs/the-vision-plugin
