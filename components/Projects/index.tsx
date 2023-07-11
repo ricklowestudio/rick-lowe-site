@@ -1,6 +1,7 @@
 import type { SanityDocument } from "@sanity/client";
 
 import Image from "next/image";
+
 import { BlockContent } from "@/components";
 
 import imageUrlBuilder from "@sanity/image-url";
