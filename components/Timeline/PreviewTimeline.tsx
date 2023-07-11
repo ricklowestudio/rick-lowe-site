@@ -8,7 +8,7 @@ import { timelineQuery } from "@/sanity/lib/queries";
 export default function PreviewTimeline({
 	timeline = [],
 }: {
-	timeline: SanityDocument[];
+	timeline: TimelineLists;
 }) {
 	const [data] = useLiveQuery(timeline, timelineQuery);
 
