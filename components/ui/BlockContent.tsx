@@ -4,7 +4,6 @@ import { PortableText } from "@portabletext/react";
 import ImageComponent from "./Image";
 import GridGallery from "./GridGallery";
 import CarouselGallery from "./CarouselGallery";
-import ReactPlayer from "react-player";
 import VideoPlayer from "./Video";
 
 const components = {
@@ -59,7 +58,7 @@ const components = {
 				<Link
 					href={value?.href}
 					rel={rel}
-					className="underline text-[#af0705] decoration-[#af0705] hover:decoration-black"
+					className="underline text-[#af0705] decoration-[#af0705] hover:decoration-black hover:text-black"
 				>
 					{children}
 				</Link>

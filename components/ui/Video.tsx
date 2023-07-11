@@ -13,7 +13,31 @@ function VideoPlayer({ value: { url } }: { value: VideoEmbed }) {
 		}
 	}, []);
 
-	return <>{hasWindow && <ReactPlayer url={url} controls />}</>;
+	return (
+		<>
+			{hasWindow && (
+				<div
+					style={{
+						position: "relative",
+						paddingTop: "56.25%",
+					}}
+				>
+					<ReactPlayer
+						url={url}
+						controls
+						className="object-contain"
+						style={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+						}}
+						width={"100%"}
+						height={"100%"}
+					/>
+				</div>
+			)}
+		</>
+	);
 }
 
 export default VideoPlayer;

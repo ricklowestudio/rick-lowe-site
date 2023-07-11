@@ -6,6 +6,6 @@ export const paintingsQuery = groq`*[_type == "paintings"]`;
 
 export const aboutQuery = groq`*[_type == "about"]`;
 
-export const media = groq`*[_type == "media"]`;
+export const mediaQuery = groq`*[_type == "media"]`;
 
-export const timeline = groq`*[_type == "timeline"]`;
+export const timelineQuery = groq`*[_type == "timeline"]`;

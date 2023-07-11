@@ -10,7 +10,7 @@ const builder = imageUrlBuilder(client);
 
 function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 	return (
-		<main className="py-9 container mx-auto">
+		<main className="container mx-auto mt-20 lg:mt-32 mb-20">
 			<div className="grid grid-cols-1 md:grid-cols-2 pb-9 ">
 				{paintings?.[0]?.featuredImage ? (
 					<div className="mr-5">

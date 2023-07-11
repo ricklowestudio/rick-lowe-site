@@ -15,7 +15,7 @@ export default function Projects({
 	projects: SanityDocument[];
 }) {
 	return (
-		<main className="container mx-auto grid grid-cols-1 divide-y divide-black ">
+		<main className="container mx-auto grid grid-cols-1 divide-y divide-black mt-20 lg:mt-32 mb-20">
 			{projects.map((project) => (
 				<div key={project._id} className="py-5">
 					<h2 className="text-2xl font-bold my-3">{project.title}</h2>
