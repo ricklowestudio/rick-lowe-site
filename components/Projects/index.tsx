@@ -12,15 +12,12 @@ export default function Projects({
 }: {
 	projects: SanityDocument[];
 }) {
-	const title =
-		projects.length === 1 ? `1 Project` : `${projects.length} Projects`;
 	return (
-		<main className="container mx-auto grid grid-cols-1 divide-y divide-blue-100">
-			<h1 className="text-2xl p-4 font-bold">{title}</h1>
+		<main className="container mx-auto grid grid-cols-1 divide-y divide-black ">
 			{projects.map((project) => (
-				<div key={project._id} className="p-4">
-					<h2 className="text-xl font-bold">{project.title}</h2>
-          
+				<div key={project._id} className="py-5">
+					<h2 className="text-2xl font-bold mb-2">{project.title}</h2>
+
 					{project?.description ? (
 						<PortableText value={project?.description} />
 					) : null}
