@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 function Navbar({
@@ -10,7 +11,7 @@ function Navbar({
 }) {
 	return (
 		<nav className="flex items-center justify-between pr-6" aria-label="Global">
-			<a href="#" className="-m-1.5 p-1.5">
+			<Link href="/" className="-m-1.5 p-1.5">
 				<span className="sr-only">/Rick Lowe</span>
 				<Image
 					src="/images/logo.jpeg"
@@ -18,7 +19,7 @@ function Navbar({
 					width={179}
 					height={42}
 				/>
-			</a>
+			</Link>
 			<button
 				type="button"
 				className="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden"
@@ -29,13 +30,13 @@ function Navbar({
 			</button>
 			<div className="hidden lg:ml-12 lg:flex lg:gap-x-14 lg:items-center">
 				{navigation.map((item) => (
-					<a
+					<Link
 						key={item.name}
 						href={item.href}
 						className="text-sm font-semibold leading-6 text-gray-900"
 					>
 						{item.name}
-					</a>
+					</Link>
 				))}
 			</div>
 		</nav>

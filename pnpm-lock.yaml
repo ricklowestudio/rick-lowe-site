@@ -20,6 +20,9 @@ dependencies:
   '@sanity/image-url':
     specifier: ^1.0.2
     version: 1.0.2
+  '@sanity/preview-kit':
+    specifier: ^2.3.1
+    version: 2.3.1(@sanity/client@6.1.6)(react@18.2.0)
   '@sanity/vision':
     specifier: '3'
     version: 3.14.1(@babel/runtime@7.22.5)(@codemirror/lint@6.4.0)(@codemirror/state@6.2.1)(@codemirror/theme-one-dark@6.1.2)(@lezer/common@1.0.3)(codemirror@6.0.1)(react-dom@18.2.0)(react-is@18.2.0)(react@18.2.0)(styled-components@5.3.11)
@@ -1499,6 +1502,32 @@ packages:
 
   /@sanity/preview-kit@2.3.0(@sanity/client@6.1.6)(react@18.2.0):
     resolution: {integrity: sha512-gl71G3JyRUbSOgu6b4NPLgSVLaqrdkC/reTUM/8T1TD7r+Ro2z7wRHO28XjmJ/tq2D2Nu4lGrl/cw+FbjE8i0g==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@sanity/client': ^6.1.4
+      react: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      '@sanity/client': 6.1.6
+      '@sanity/eventsource': 5.0.0
+      '@sanity/groq-store': 2.3.0
+      '@vercel/stega': 0.0.5
+      lodash.get: 4.4.2
+      lodash.isplainobject: 4.0.6
+      lru-cache: 10.0.0
+      mendoza: 2.1.1
+      react: 18.2.0
+      react-fast-compare: 3.2.2
+      tiny-invariant: 1.3.1
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@sanity/preview-kit@2.3.1(@sanity/client@6.1.6)(react@18.2.0):
+    resolution: {integrity: sha512-QccmNBuB+5NF6nUbhmsKWhfshVsb/rNHJ5zEqySoqBPu/QYttSVX4xIV93et6eJNPMvumU1VP0Z3EfSFT30N/A==}
     engines: {node: '>=14'}
     peerDependencies:
       '@sanity/client': ^6.1.4
