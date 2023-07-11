@@ -1,6 +1,7 @@
 import type { SanityDocument } from "@sanity/client";
+
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
+import BlockContent from "../BlockContent";
 
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/lib/client";
@@ -19,7 +20,7 @@ export default function Projects({
 					<h2 className="text-2xl font-bold mb-2">{project.title}</h2>
 
 					{project?.description ? (
-						<PortableText value={project?.description} />
+						<BlockContent value={project?.description} />
 					) : null}
 				</div>
 			))}
