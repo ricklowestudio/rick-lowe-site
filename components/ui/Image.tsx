@@ -7,7 +7,7 @@ const builder = imageUrlBuilder(client);
 
 function ImageComponent({ value }: { value: any }) {
 	return (
-		<div className="relative w-full h-[40rem] m-10 mx-auto">
+		<div className="relative w-full my-5 h-[40rem]  mx-auto">
 			<Image
 				className="object-contain"
 				src={builder.image(value).url()}

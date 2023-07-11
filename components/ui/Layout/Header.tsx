@@ -8,7 +8,7 @@ import { navigation } from "@/constants";
 function Header() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	return (
-		<header className="inset-x-0 top-0 z-50">
+		<header className="inset-x-0 top-0 z-50 fixed bg-white pb-4">
 			<div className="mx-auto max-w-7xl">
 				<div className="px-6 pt-6  lg:pl-8 lg:pr-0">
 					<Navbar

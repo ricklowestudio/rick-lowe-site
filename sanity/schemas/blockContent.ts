@@ -15,6 +15,7 @@ export default defineType({
 	title: "Block Content",
 	name: "blockContent",
 	type: "array",
+
 	of: [
 		defineArrayMember({
 			title: "Block",
@@ -46,11 +47,16 @@ export default defineType({
 						title: "URL",
 						name: "link",
 						type: "object",
+
 						fields: [
 							{
 								title: "URL",
 								name: "href",
 								type: "url",
+								validation: (Rule) =>
+									Rule.uri({
+										scheme: ["http", "https", "mailto", "tel"],
+									}),
 							},
 						],
 					},
