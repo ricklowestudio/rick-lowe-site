@@ -9,7 +9,6 @@ import { paintingsQuery } from "@/sanity/lib/queries";
 
 export default async function Page() {
 	const paintings = await cachedClient(paintingsQuery);
-	console.log(paintings);
 
 	return <Paintings paintings={paintings} />;
 }
