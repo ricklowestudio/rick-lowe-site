@@ -4,6 +4,8 @@ import { PortableText } from "@portabletext/react";
 import ImageComponent from "./Image";
 import GridGallery from "./GridGallery";
 import CarouselGallery from "./CarouselGallery";
+import ReactPlayer from "react-player";
+import VideoPlayer from "./Video";
 
 const components = {
 	types: {
@@ -16,6 +18,7 @@ const components = {
 					return <CarouselGallery value={value} />;
 			}
 		},
+		videoEmbed: ({ value }: any) => <VideoPlayer value={value} />,
 	},
 	list: {
 		bullet: ({ children }: any) => (
