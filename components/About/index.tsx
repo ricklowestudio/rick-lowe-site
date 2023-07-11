@@ -1,6 +1,7 @@
 import type { SanityDocument } from "@sanity/client";
 import Image from "next/image";
-import { PortableText } from "@portabletext/react";
+
+import { BlockContent } from "@/components";
 
 import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/lib/client";
@@ -21,7 +22,7 @@ function About({ about = [] }: { about: SanityDocument[] }) {
 			) : null}
 			<div className="md:mr-6">
 				{about?.[0]?.description ? (
-					<PortableText value={about?.[0]?.description} />
+					<BlockContent value={about?.[0]?.description} />
 				) : null}
 			</div>
 		</main>
