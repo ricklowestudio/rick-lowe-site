@@ -19,3 +19,9 @@ type ImageGallery = {
 	_type: string;
 	_key: string;
 };
+
+type VideoEmbed = {
+	url: string;
+	_type: string;
+	_key: string;
+};

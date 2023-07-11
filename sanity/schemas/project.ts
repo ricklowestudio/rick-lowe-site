@@ -11,19 +11,11 @@ export default defineType({
 			type: "string",
 		}),
 		defineField({
-			name: "description",
-			title: "Description",
-			type: "blockContent",
-		}),
-		defineField({
-			name: "videoEmbed",
-			title: "Video Embed",
-			type: "videoEmbed",
-		}),
-		defineField({
 			name: "image",
 			title: "Image",
 			type: "image",
+			description:
+				"Cover image for the project, this will show first, after the title, on the site",
 			options: {
 				hotspot: true,
 			},
@@ -39,6 +31,13 @@ export default defineType({
 					title: "Caption",
 				},
 			],
+		}),
+		defineField({
+			name: "description",
+			title: "Description",
+			type: "blockContent",
+			description:
+				"This is rich content, so you can add links, images, a grid gallery, an image carousel, and/or a video link. The order you add them will be the order they appear on the site.",
 		}),
 	],
 	preview: {
