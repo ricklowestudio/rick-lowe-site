@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 
 import ImageComponent from "./Image";
 import GridGallery from "./GridGallery";
+import CarouselGallery from "./CarouselGallery";
 
 const components = {
 	types: {
@@ -13,7 +13,7 @@ const components = {
 				case "grid":
 					return <GridGallery value={value} />;
 				case "carousel":
-					return <div>Carousel</div>;
+					return <CarouselGallery value={value} />;
 			}
 		},
 	},

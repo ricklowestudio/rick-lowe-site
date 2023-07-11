@@ -14,7 +14,7 @@ function GridGallery({ value: { images } }: { value: ImageGallery }) {
 						className="object-contain"
 						src={builder.image(image).url()}
 						fill
-						alt="Grid Image"
+						alt={image?.alt || `Grid Image ${image._key}`}
 					/>
 				</div>
 			))}

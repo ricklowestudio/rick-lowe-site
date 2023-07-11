@@ -3,18 +3,19 @@ type Navigation = {
 	href: string;
 };
 
-type ImageGallery = {
-	images: Array<Image>;
-	display: string;
-	_type: string;
-	_key: string;
-};
-
 type Image = {
 	asset: {
 		_type: string;
-		_key: string;
+		_ref: string;
 	};
+	_type: string;
+	_key: string;
+	alt: string;
+};
+
+type ImageGallery = {
+	images: Array<Image>;
+	display: string;
 	_type: string;
 	_key: string;
 };
