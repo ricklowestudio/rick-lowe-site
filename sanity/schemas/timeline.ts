@@ -46,7 +46,7 @@ export default defineType({
 			],
 		}),
 		defineField({
-			name: "link",
+			name: "videoUrl",
 			title: "Video Embed Link",
 			type: "url",
 		}),

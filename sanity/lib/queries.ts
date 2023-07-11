@@ -8,4 +8,4 @@ export const aboutQuery = groq`*[_type == "about"]`;
 
 export const mediaQuery = groq`*[_type == "media"]`;
 
-export const timelineQuery = groq`*[_type == "timeline"]`;
+export const timelineQuery = groq`*[_type == "timeline"] | order(startPeriod asc)`;

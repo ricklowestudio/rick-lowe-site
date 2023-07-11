@@ -25,3 +25,20 @@ type VideoEmbed = {
 	_type: string;
 	_key: string;
 };
+
+type TimelineLists = Array<TimelineItem>;
+
+type TimelineItem = {
+	startPeriod: number;
+	endPeriod: number;
+	title: string;
+	description: Array<unknown>;
+	image: Image;
+	videoUrl: string;
+	_type: string;
+	_id: string;
+	_rev: string;
+	_type: string;
+	_updatedAt: string;
+	_createdAt: string;
+};
