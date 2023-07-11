@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
-function VideoPlayer({ value: { url } }: { value: VideoEmbed }) {
+function VideoPlayer({ url }: { url: string }) {
 	const [hasWindow, setHasWindow] = useState(false);
 
 	useEffect(() => {

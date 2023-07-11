@@ -1,5 +1,8 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 function Navbar({
@@ -9,9 +12,14 @@ function Navbar({
 	navigation: Navigation[];
 	setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+	const currentRoute = usePathname();
+
 	return (
 		<nav className="flex items-center justify-between pr-6" aria-label="Global">
-			<Link href="/" className="-m-1.5 p-1.5">
+			<Link
+				href="/"
+				className="hover:underline hover:text-[#af0705] hover:decoration-[#af0705]   -m-1.5 p-1.5"
+			>
 				<span className="sr-only">/Rick Lowe</span>
 				<Image
 					src="/images/logo.jpeg"
@@ -33,7 +41,11 @@ function Navbar({
 					<Link
 						key={item.name}
 						href={item.href}
-						className="text-sm font-semibold leading-6 text-gray-900"
+						className={`${
+							currentRoute === item.href
+								? "underline text-[#af0705] decoration-[#af0705]  hover:text-black hover:decoration-black"
+								: "hover:underline hover:text-[#af0705] hover:decoration-[#af0705]"
+						} text-sm font-semibold leading-6 underline-offset-8`}
 					>
 						{item.name}
 					</Link>
