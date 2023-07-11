@@ -29,7 +29,9 @@ const components = {
 		),
 	},
 	block: {
-		normal: ({ children }: any) => <p className="mb-3 leading-6">{children}</p>,
+		normal: ({ children }: any) => (
+			<p className="font-light mb-3 leading-6">{children}</p>
+		),
 		h1: ({ children }: any) => (
 			<h1 className="text-5xl py-10 font-bold">{children}</h1>
 		),
