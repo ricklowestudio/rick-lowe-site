@@ -2,24 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
-
-const builder = imageUrlBuilder(client);
+import ImageComponent from "./Image";
+import GridGallery from "./GridGallery";
 
 const components = {
 	types: {
-		image: ({ value }: any) => {
-			return (
-				<div className="relative w-full h-96 m-10 mx-auto">
-					<Image
-						className="object-contain"
-						src={builder.image(value).url()}
-						fill
-						alt={value?.alt}
-					/>
-				</div>
-			);
+		image: ({ value }: any) => <ImageComponent value={value} />,
+		imageGallery: ({ value }: any) => {
+			switch (value?.display) {
+				case "grid":
+					return <GridGallery value={value} />;
+				case "carousel":
+					return <div>Carousel</div>;
+			}
 		},
 	},
 	list: {
