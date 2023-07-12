@@ -55,12 +55,12 @@ function MobileNav({
 						<div className="space-y-2 py-6">
 							{navigation.map((item) => (
 								<Link
-									key={item.name}
+									key={item.label}
 									href={item.href}
 									onClick={() => setMobileMenuOpen(false)}
 									className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:underline hover:text-[#af0705] hover:decoration-[#af0705]"
 								>
-									{item.name}
+									{item.label}
 								</Link>
 							))}
 						</div>

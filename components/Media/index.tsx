@@ -12,6 +12,7 @@ export default function Media({ media = [] }: { media: SanityDocument[] }) {
 				>
 					<div className="mr-5">
 						<h2 className="text-2xl font-bold my-3">{media.title}</h2>
+						<h3 className="text-lg font-normal my-3">{media.subtitle}</h3>
 						{media?.description ? (
 							<BlockContent value={media?.description} />
 						) : null}

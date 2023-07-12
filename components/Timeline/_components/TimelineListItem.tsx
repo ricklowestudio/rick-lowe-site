@@ -12,7 +12,7 @@ function TimelineListItem({
 	timelineItem: TimelineItem;
 }) {
 	return (
-		<li className="mb-10 ml-4">
+		<li className="mb-12 ml-4 px-6 py-3 shadow-md border rounded-md">
 			<div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
 			{startPeriod ? (
 				<time className="mb-1 text-lg font-normal leading-none text-black">

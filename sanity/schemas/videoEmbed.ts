@@ -13,8 +13,7 @@ export default defineType({
 	],
 	preview: {
 		select: {
-			title: "title",
-			media: "image",
+			title: "url",
 		},
 	},
 });
