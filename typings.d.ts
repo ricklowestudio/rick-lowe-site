@@ -52,6 +52,6 @@ type ContactFormData = {
 	lastName: string;
 	subject: string;
 	email: string;
-	phone: string;
+	phoneNumber: string;
 	message: string;
 };
