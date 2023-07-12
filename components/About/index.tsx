@@ -10,7 +10,7 @@ const builder = imageUrlBuilder(client);
 
 function About({ about = [] }: { about: SanityDocument[] }) {
 	return (
-		<main className="mt-20 lg:mt-32 mb-20 container mx-auto grid grid-cols-1 md:grid-cols-2">
+		<main className="my-20 container mx-auto grid grid-cols-1 md:grid-cols-2">
 			<div className="mb-5 md:mb-0 md:order-last">
 				{about?.[0]?.image ? (
 					<Image
@@ -18,6 +18,7 @@ function About({ about = [] }: { about: SanityDocument[] }) {
 						width={636}
 						height={795}
 						alt={about?.[0]?.image?.alt}
+						sizes="100vw"
 					/>
 				) : null}
 			</div>

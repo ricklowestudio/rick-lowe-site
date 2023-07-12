@@ -6,7 +6,7 @@ export default function Timeline({
 	timeline: TimelineLists;
 }) {
 	return (
-		<main className="container mx-auto grid grid-cols-1 divide-y justify-items-center divide-black mt-20 lg:mt-32 mb-20">
+		<main className="container mx-auto grid grid-cols-1 divide-y justify-items-center divide-black my-20">
 			<TimelineList timeline={timeline} />
 		</main>
 	);

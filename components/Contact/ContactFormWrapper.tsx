@@ -4,15 +4,16 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 
 import ContactForm from "./ContactForm";
 
-import { verifyCaptcha } from "@/lib";
+import { verifyCaptcha, sendContactForm } from "@/lib";
 
 const schema = yup.object({
 	firstName: yup.string().required("First name is required"),
 	lastName: yup.string().required("Last name is required"),
-	company: yup.string(),
+	subject: yup.string().required("Subject is required"),
 	email: yup.string().email().required("Email is required"),
 	phoneNumber: yup.string(),
 	message: yup.string().required("Message is required"),
@@ -46,21 +47,35 @@ export default function ContactFormWrapper() {
 	}, [handleReCaptchaVerify]);
 
 	const {
+		reset,
 		register,
 		handleSubmit,
-		formState: { errors, isDirty, isValid, isSubmitting },
+		formState: { errors, isDirty, isValid, isSubmitting, isSubmitSuccessful },
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
 
+	useEffect(() => {
+		reset();
+	}, [isSubmitSuccessful]);
+
 	const onSubmit = useCallback(
 		async (data: any) => {
 			if (!isVerified) {
+				// TODO: Add toast message to refresh page or something
 				console.log("Please verify captcha");
+				toast.warn("Please verify captcha");
 			} else {
 				try {
-					console.log("captcha working", data);
+					const response: any = await sendContactForm(data);
+
+					if (response?.success === true) {
+						toast.success("Message sent successfully");
+					}
 				} catch (error) {
+					toast.error(
+						"Something went wrong, please try refreshing the page and starting over."
+					);
 					console.error(error);
 				} finally {
 				}

@@ -31,6 +31,8 @@ function MobileNav({
 					>
 						<span className="sr-only">Rick Lowe</span>
 						<Image
+							priority
+							sizes="100vw"
 							className="h-8 w-auto"
 							src="/images/logo.jpeg"
 							alt="Rick Lowe Logo"

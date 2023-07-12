@@ -15,6 +15,7 @@ function GridGallery({ value: { images } }: { value: ImageGallery }) {
 						src={builder.image(image).url()}
 						fill
 						alt={image?.alt || `Grid Image ${image._key}`}
+						sizes="100vw"
 					/>
 				</div>
 			))}

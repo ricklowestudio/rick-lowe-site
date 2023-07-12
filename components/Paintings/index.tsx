@@ -10,7 +10,7 @@ const builder = imageUrlBuilder(client);
 
 function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 	return (
-		<main className="container mx-auto mt-20 lg:mt-32 mb-20">
+		<main className="container mx-auto my-20">
 			<div className="grid grid-cols-1 md:grid-cols-2 pb-9 ">
 				{paintings?.[0]?.featuredImage ? (
 					<div className="mr-5">
@@ -54,6 +54,7 @@ function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 									.url()}
 								width={636}
 								height={795}
+								sizes="100vw"
 								alt={paintings?.[0]?.image_1?.alt}
 							/>
 						) : null}
@@ -67,6 +68,7 @@ function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 									.url()}
 								width={636}
 								height={795}
+								sizes="100vw"
 								alt={paintings?.[0]?.image_2?.alt}
 							/>
 						) : null}
