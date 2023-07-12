@@ -18,6 +18,7 @@ export default defineType({
 				"Cover image for the project, this will show first, after the title, on the site",
 			options: {
 				hotspot: true,
+				metadata: ["lqip"],
 			},
 			fields: [
 				{

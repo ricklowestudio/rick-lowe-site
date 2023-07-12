@@ -2,28 +2,34 @@ import { Metadata } from "next";
 
 export const navigation: Navigation[] = [
 	{
-		name: "About",
+		label: "About",
+		value: "about",
 		href: "/",
 	},
 	{
-		name: "Timeline",
+		label: "Timeline",
+		value: "timeline",
 		href: "/timeline",
 	},
 
 	{
-		name: "Projects",
+		label: "Projects",
+		value: "project",
 		href: "/projects",
 	},
 	{
-		name: "Paintings",
+		label: "Paintings",
+		value: "paintings",
 		href: "/paintings",
 	},
 	{
-		name: "Media",
+		label: "Media",
+		value: "media",
 		href: "/media",
 	},
 	{
-		name: "Contact",
+		label: "Contact",
+		value: "contact",
 		href: "/contact",
 	},
 ];
@@ -34,13 +40,13 @@ export const studioMeta: Metadata = {
 };
 
 export const homeMeta: Metadata = {
-	title: "Rick Lowe - Official Website",
+	title: "Rick Lowe Official Website",
 	description:
 		"Lowe is a distinguished artist whose remarkable achievements in the art world are mirrored by his championship of people and communities through social and community engaged art projects, as evidenced, in particular, through Houston’s noteworthy Project Row Houses. Founded in 1993 by Lowe, Project Row Houses is an arts and cultural community located in Houston’s significant, historical Third Ward – one of the city’s oldest African American neighbourhoods. Much of Lowe’s interest and adept skill with collaboration comes from his family upbringing, where he was surrounded by a large family of four brothers and seven sisters. This sense of familial community is closely mirrored in many of his projects that focuses on building and nurturing relationships.",
 	creator: "Gideon Ibemere, Jr.",
 	openGraph: {
 		type: "website",
-		title: "Rick Lowe - Official Website",
+		title: "Rick Lowe Official Website",
 		description:
 			"Lowe is a distinguished artist whose remarkable achievements in the art world are mirrored by his championship of people and communities through social and community engaged art projects, as evidenced, in particular, through Houston’s noteworthy Project Row Houses. Founded in 1993 by Lowe, Project Row Houses is an arts and cultural community located in Houston’s significant, historical Third Ward – one of the city’s oldest African American neighbourhoods. Much of Lowe’s interest and adept skill with collaboration comes from his family upbringing, where he was surrounded by a large family of four brothers and seven sisters. This sense of familial community is closely mirrored in many of his projects that focuses on building and nurturing relationships.",
 		url: "https://www.ricklowe.com",
@@ -55,7 +61,7 @@ export const homeMeta: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Rick Lowe - Official Website",
+		title: "Rick Lowe Official Website",
 		description:
 			"Lowe is a distinguished artist whose remarkable achievements in the art world are mirrored by his championship of people and communities through social and community engaged art projects, as evidenced, in particular, through Houston’s noteworthy Project Row Houses. Founded in 1993 by Lowe, Project Row Houses is an arts and cultural community located in Houston’s significant, historical Third Ward – one of the city’s oldest African American neighbourhoods. Much of Lowe’s interest and adept skill with collaboration comes from his family upbringing, where he was surrounded by a large family of four brothers and seven sisters. This sense of familial community is closely mirrored in many of his projects that focuses on building and nurturing relationships.",
 		images: {

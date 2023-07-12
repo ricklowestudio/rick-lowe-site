@@ -40,7 +40,7 @@ function Navbar({
 			<div className="hidden lg:ml-12 lg:flex lg:gap-x-14 lg:items-center">
 				{navigation.map((item) => (
 					<Link
-						key={item.name}
+						key={item.label}
 						href={item.href}
 						className={`${
 							currentRoute === item.href
@@ -48,7 +48,7 @@ function Navbar({
 								: "hover:underline hover:text-[#af0705] hover:decoration-[#af0705]"
 						} text-sm font-semibold leading-6 underline-offset-8`}
 					>
-						{item.name}
+						{item.label}
 					</Link>
 				))}
 			</div>
