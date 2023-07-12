@@ -23,11 +23,13 @@ export async function POST(req: Request) {
 		return response;
 	}
 
-	const res = await verifyCaptcha();
+	try {
+		const res = await verifyCaptcha();
 
-	if ((res.success = true)) {
-		return NextResponse.json({ success: true });
-	} else {
+		if ((res.success = true)) {
+			return NextResponse.json({ success: true });
+		}
+	} catch (error) {
 		console.error("Captcha failed.");
 		return NextResponse.error();
 	}

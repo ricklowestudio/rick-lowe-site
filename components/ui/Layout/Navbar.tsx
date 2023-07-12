@@ -1,19 +1,18 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import { Bars3Icon } from "@heroicons/react/24/outline";
 
 function Navbar({
 	navigation,
 	setMobileMenuOpen,
+	currentRoute,
 }: {
+	currentRoute: string;
 	navigation: Navigation[];
 	setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-	const currentRoute = usePathname();
-
 	return (
 		<nav className="flex items-center justify-between pr-6" aria-label="Global">
 			<Link

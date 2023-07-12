@@ -37,17 +37,21 @@ export async function POST(req: Request) {
 		return NextResponse.json({ error: "Bad request" });
 	} else {
 		try {
-			await nodemailerInstance.transporter.sendMail({
+			const initialResponse = await nodemailerInstance.transporter.sendMail({
 				...nodemailerInstance.mailOptions,
 				...generateEmailContent(request),
 				subject: request.subject,
 			});
 
-			return NextResponse.json({ success: true });
+			if (
+				initialResponse.accepted.length > 0 &&
+				initialResponse.response.includes("OK")
+			) {
+				return NextResponse.json({ success: true });
+			}
 		} catch (e: any) {
-			return NextResponse.json({ error: e.mesage });
+			console.error(e);
+			return NextResponse.error();
 		}
 	}
-
-	return NextResponse.json({ error: "Bad request" });
 }
