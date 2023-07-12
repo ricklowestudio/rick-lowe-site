@@ -31,6 +31,7 @@ export default defineType({
 			type: "image",
 			options: {
 				hotspot: true,
+				metadata: ["lqip"],
 			},
 			fields: [
 				{
@@ -53,8 +54,16 @@ export default defineType({
 	],
 	preview: {
 		select: {
-			title: "title",
+			title: "startPeriod",
 			media: "image",
+			other: "title",
+		},
+		prepare(selection) {
+			const { title, media, other } = selection;
+			return {
+				title: `${title} - ${other}`,
+				media,
+			};
 		},
 	},
 });

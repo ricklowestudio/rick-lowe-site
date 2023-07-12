@@ -11,6 +11,7 @@ export default defineType({
 			type: "image",
 			options: {
 				hotspot: true,
+				metadata: ["lqip"],
 			},
 			fields: [
 				{
@@ -46,6 +47,7 @@ export default defineType({
 			type: "image",
 			options: {
 				hotspot: true,
+				metadata: ["lqip"],
 			},
 			fields: [
 				{
@@ -66,6 +68,7 @@ export default defineType({
 			type: "image",
 			options: {
 				hotspot: true,
+				metadata: ["lqip"],
 			},
 			fields: [
 				{

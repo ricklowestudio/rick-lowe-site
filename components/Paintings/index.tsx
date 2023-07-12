@@ -1,12 +1,5 @@
 import type { SanityDocument } from "@sanity/client";
-import Image from "next/image";
-
-import { BlockContent } from "@/components";
-
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
-
-const builder = imageUrlBuilder(client);
+import { BlockContent, ImageComponent } from "@/components";
 
 function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 	return (
@@ -14,17 +7,7 @@ function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 			<div className="grid grid-cols-1 md:grid-cols-2 pb-9 ">
 				{paintings?.[0]?.featuredImage ? (
 					<div className="mr-5">
-						<Image
-							className="mb-5 md:mb-0 md:order-last"
-							src={builder
-								.image(paintings?.[0]?.featuredImage)
-								.width(636)
-								.height(530)
-								.url()}
-							width={636}
-							height={530}
-							alt={paintings?.[0]?.featuredImage?.alt}
-						/>
+						<ImageComponent value={paintings?.[0]?.featuredImage} />
 					</div>
 				) : null}
 
@@ -45,32 +28,10 @@ function Paintings({ paintings = [] }: { paintings: SanityDocument[] }) {
 					</div>
 					<div>
 						{paintings?.[0]?.image_1 ? (
-							<Image
-								className="mb-5 md:order-last"
-								src={builder
-									.image(paintings?.[0]?.image_1)
-									.width(636)
-									.height(795)
-									.url()}
-								width={636}
-								height={795}
-								sizes="100vw"
-								alt={paintings?.[0]?.image_1?.alt}
-							/>
+							<ImageComponent value={paintings?.[0]?.image_1} />
 						) : null}
 						{paintings?.[0]?.image_2 ? (
-							<Image
-								className="mb-5 md:order-last"
-								src={builder
-									.image(paintings?.[0]?.image_2)
-									.width(636)
-									.height(795)
-									.url()}
-								width={636}
-								height={795}
-								sizes="100vw"
-								alt={paintings?.[0]?.image_2?.alt}
-							/>
+							<ImageComponent value={paintings?.[0]?.image_2} />
 						) : null}
 					</div>
 				</div>

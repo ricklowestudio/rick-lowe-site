@@ -6,6 +6,11 @@ export default defineType({
 	type: "object",
 	fields: [
 		defineField({
+			name: "title",
+			title: "Title",
+			type: "string",
+		}),
+		defineField({
 			name: "images",
 			title: "Images",
 			type: "array",
@@ -16,6 +21,7 @@ export default defineType({
 					title: "Image",
 					options: {
 						hotspot: true,
+						metadata: ["lqip"],
 					},
 					fields: [
 						{
@@ -48,6 +54,12 @@ export default defineType({
 		select: {
 			title: "title",
 			media: "image",
+		},
+		prepare(selection) {
+			return {
+				title: selection.title || "Image Gallery",
+				media: selection.media,
+			};
 		},
 	},
 });

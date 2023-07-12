@@ -1,5 +1,6 @@
 type Navigation = {
-	name: string;
+	label: string;
+	value: string;
 	href: string;
 };
 
