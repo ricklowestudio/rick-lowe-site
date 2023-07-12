@@ -102,7 +102,10 @@ export default function ContactFormWrapper() {
 			<ContactForm
 				handleSubmit={handleSubmit}
 				register={register}
-				formState={{ errors, isDirty, isValid, isSubmitting }}
+				errors={errors}
+				isDirty={isDirty}
+				isValid={isValid}
+				isSubmitting={isSubmitting}
 				onSubmit={onSubmit}
 			/>
 		</div>
