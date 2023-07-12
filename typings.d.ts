@@ -42,3 +42,7 @@ type TimelineItem = {
 	_updatedAt: string;
 	_createdAt: string;
 };
+
+type VerifyResponse = {
+	success: boolean;
+};
