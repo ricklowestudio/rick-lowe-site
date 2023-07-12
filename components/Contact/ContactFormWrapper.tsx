@@ -4,6 +4,7 @@ import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 
 import ContactForm from "./ContactForm";
 
@@ -46,22 +47,35 @@ export default function ContactFormWrapper() {
 	}, [handleReCaptchaVerify]);
 
 	const {
+		reset,
 		register,
 		handleSubmit,
-		formState: { errors, isDirty, isValid, isSubmitting },
+		formState: { errors, isDirty, isValid, isSubmitting, isSubmitSuccessful },
 	} = useForm({
 		resolver: yupResolver(schema),
 	});
+
+	useEffect(() => {
+		reset();
+	}, [isSubmitSuccessful]);
 
 	const onSubmit = useCallback(
 		async (data: any) => {
 			if (!isVerified) {
 				// TODO: Add toast message to refresh page or something
 				console.log("Please verify captcha");
+				toast.warn("Please verify captcha");
 			} else {
 				try {
-					const response = await sendContactForm(data);
+					const response: any = await sendContactForm(data);
+
+					if (response?.success === true) {
+						toast.success("Message sent successfully");
+					}
 				} catch (error) {
+					toast.error(
+						"Something went wrong, please try refreshing the page and starting over."
+					);
 					console.error(error);
 				} finally {
 				}

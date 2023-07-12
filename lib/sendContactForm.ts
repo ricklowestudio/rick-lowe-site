@@ -1,4 +1,6 @@
-export default async function sendContactForm(data: ContactFormData) {
+export default async function sendContactForm(
+	data: ContactFormData
+): Promise<VerifyResponse> {
 	const response = await fetch("/api/contact/send", {
 		method: "POST",
 		headers: {
@@ -6,8 +8,7 @@ export default async function sendContactForm(data: ContactFormData) {
 			Accept: "application/json",
 		},
 		body: JSON.stringify(data),
-	}).then((res) => {
-		if (!res.ok) throw new Error("Failed to send message!");
-		return res.json();
 	});
+
+	return response.json();
 }
