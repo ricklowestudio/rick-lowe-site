@@ -2,17 +2,18 @@ function ContactForm({
 	register,
 	handleSubmit,
 	onSubmit,
-	formState: { errors, isDirty, isValid, isSubmitting },
+	errors,
+	isDirty,
+	isValid,
+	isSubmitting,
 }: {
 	register: Function;
 	handleSubmit: Function;
 	onSubmit: Function;
-	formState: {
-		errors: any;
-		isDirty: boolean;
-		isValid: boolean;
-		isSubmitting: boolean;
-	};
+	errors: any;
+	isDirty: boolean;
+	isValid: boolean;
+	isSubmitting: boolean;
 }) {
 	return (
 		<form
@@ -32,9 +33,11 @@ function ContactForm({
 							{...register("firstName")}
 							className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
 						/>
-						<p className="mt-3 text-sm text-red-500">
-							{errors.firstName?.message}
-						</p>
+						{errors.firstName?.message ? (
+							<p className="text-sm text-red-500">
+								{errors.firstName?.message}
+							</p>
+						) : null}
 					</div>
 				</div>
 				<div>
@@ -50,9 +53,7 @@ function ContactForm({
 							className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
 						/>
 						{errors.lastName?.message ? (
-							<p className="mt-3 text-sm text-red-500">
-								{errors.lastName?.message}
-							</p>
+							<p className="text-sm text-red-500">{errors.lastName?.message}</p>
 						) : null}
 					</div>
 				</div>
@@ -69,9 +70,7 @@ function ContactForm({
 							className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
 						/>
 						{errors.subject?.message ? (
-							<p className="mt-3 text-sm text-red-500">
-								{errors.subject?.message}
-							</p>
+							<p className="text-sm text-red-500">{errors.subject?.message}</p>
 						) : null}
 					</div>
 				</div>
@@ -88,9 +87,7 @@ function ContactForm({
 							className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
 						/>
 						{errors.email?.message ? (
-							<p className="mt-3 text-sm text-red-500">
-								{errors.email?.message}
-							</p>
+							<p className="text-sm text-red-500">{errors.email?.message}</p>
 						) : null}
 					</div>
 				</div>
@@ -107,7 +104,7 @@ function ContactForm({
 							className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-950 sm:text-sm sm:leading-6"
 						/>
 						{errors.phoneNumber?.message ? (
-							<p className="mt-3 text-sm text-red-500">
+							<p className="text-sm text-red-500">
 								{errors.phoneNumber?.message}
 							</p>
 						) : null}
@@ -128,16 +125,14 @@ function ContactForm({
 							defaultValue={""}
 						/>
 						{errors.message?.message ? (
-							<p className="mt-3 text-sm text-red-500">
-								{errors.message?.message}
-							</p>
+							<p className="text-sm text-red-500">{errors.message?.message}</p>
 						) : null}
 					</div>
 				</div>
 			</div>
 			<div className="mt-10">
 				<button
-					disabled={!isDirty || !isValid || isSubmitting}
+					// disabled={!isDirty || !isValid || isSubmitting}
 					type="submit"
 					className={`${
 						!isDirty || !isValid || isSubmitting ? "cursor-not-allowed" : ""
