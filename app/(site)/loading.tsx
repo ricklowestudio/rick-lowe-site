@@ -1,9 +1,9 @@
-function loading() {
+function Loading() {
 	return (
-		<div className="w-100 h-100 flex items-center justify-items-center">
+		<div className="flex items-center justify-center">
 			<p className="text-xl text-black font-bold">Loading...</p>
 		</div>
 	);
 }
 
-export default loading;
+export default Loading;

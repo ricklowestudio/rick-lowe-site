@@ -28,12 +28,13 @@ function TimelineListItem({
 			<h3 className="text-base font-normal text-black">{title}</h3>
 			<BlockContent value={description} />
 			{image ? (
-				<div className="relative w-full h-max m-10 mx-auto">
+				<div className="relative w-full h-[36rem] m-10 mx-auto">
 					<Image
 						className="object-contain"
 						src={builder.image(image).url()}
 						fill
-						alt={image?.alt}
+						alt={image?.alt || `Carousel Image ${image._key}`}
+						sizes="100vw"
 					/>
 				</div>
 			) : null}

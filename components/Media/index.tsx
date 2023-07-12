@@ -8,7 +8,7 @@ export default function Media({ media = [] }: { media: SanityDocument[] }) {
 			{media.map((media) => (
 				<div
 					key={media._id}
-					className="grid grid-cols-1 md:grid-cols-2 items-center pt-6"
+					className="grid grid-cols-1 md:grid-cols-2 items-center"
 				>
 					<div className="mr-5">
 						<h2 className="text-2xl font-bold my-3">{media.title}</h2>

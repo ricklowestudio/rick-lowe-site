@@ -22,6 +22,8 @@ function Navbar({
 			>
 				<span className="sr-only">/Rick Lowe</span>
 				<Image
+					priority
+					sizes="100vw"
 					src="/images/logo.jpeg"
 					alt="Rick Lowe Logo"
 					width={179}

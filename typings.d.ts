@@ -42,3 +42,16 @@ type TimelineItem = {
 	_updatedAt: string;
 	_createdAt: string;
 };
+
+type VerifyResponse = {
+	success: boolean;
+};
+
+type ContactFormData = {
+	firstName: string;
+	lastName: string;
+	subject: string;
+	email: string;
+	phone: string;
+	message: string;
+};
