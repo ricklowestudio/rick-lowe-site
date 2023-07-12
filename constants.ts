@@ -48,8 +48,6 @@ export const homeMeta: Metadata = {
 		images: [
 			{
 				url: "https://www.ricklowe.com/images/og-image.png",
-				width: 800,
-				height: 600,
 				alt: "Rick Lowe",
 			},
 		],
