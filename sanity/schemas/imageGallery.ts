@@ -21,6 +21,7 @@ export default defineType({
 					title: "Image",
 					options: {
 						hotspot: true,
+						metadata: ["lqip"],
 					},
 					fields: [
 						{
