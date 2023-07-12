@@ -9,6 +9,12 @@ function StudioNavbar(props: any) {
 					<ArrowUturnLeftIcon className=" text=[#af0707] h-6 w-6 mr-2" />
 					Go to the Website
 				</Link>
+				<Link
+					href="/api/preview"
+					className="text-white bg-[#af0707] px-3.5 py-2.5 text-center text-sm font-semibold shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black block rounded-md cursor-pointer"
+				>
+					Enter Preview Mode
+				</Link>
 			</div>
 			<>{props.renderDefault(props)}</>
 		</div>
