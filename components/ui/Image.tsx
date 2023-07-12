@@ -9,10 +9,11 @@ function ImageComponent({ value }: { value: any }) {
 	return (
 		<div className="relative w-full my-5 h-[40rem]  mx-auto">
 			<Image
-				className="object-contain"
+				alt={value?.alt || `Image ${value._key}`}
 				src={builder.image(value).url()}
+				className="object-contain"
+				sizes="100vw"
 				fill
-				alt={value?.alt}
 			/>
 		</div>
 	);

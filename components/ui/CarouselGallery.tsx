@@ -24,8 +24,9 @@ function CarouselComponent({ value: { images } }: { value: ImageGallery }) {
 						<Image
 							className="object-contain"
 							src={builder.image(image).url()}
-							fill
 							alt={image?.alt || `Carousel Image ${image._key}`}
+							sizes="100vw"
+							fill
 						/>
 					</div>
 				))}

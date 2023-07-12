@@ -7,12 +7,12 @@ import * as yup from "yup";
 
 import ContactForm from "./ContactForm";
 
-import { verifyCaptcha } from "@/lib";
+import { verifyCaptcha, sendContactForm } from "@/lib";
 
 const schema = yup.object({
 	firstName: yup.string().required("First name is required"),
 	lastName: yup.string().required("Last name is required"),
-	company: yup.string(),
+	subject: yup.string().required("Subject is required"),
 	email: yup.string().email().required("Email is required"),
 	phoneNumber: yup.string(),
 	message: yup.string().required("Message is required"),
@@ -56,10 +56,11 @@ export default function ContactFormWrapper() {
 	const onSubmit = useCallback(
 		async (data: any) => {
 			if (!isVerified) {
+				// TODO: Add toast message to refresh page or something
 				console.log("Please verify captcha");
 			} else {
 				try {
-					console.log("captcha working", data);
+					const response = await sendContactForm(data);
 				} catch (error) {
 					console.error(error);
 				} finally {

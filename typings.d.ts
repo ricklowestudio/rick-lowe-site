@@ -46,3 +46,12 @@ type TimelineItem = {
 type VerifyResponse = {
 	success: boolean;
 };
+
+type ContactFormData = {
+	firstName: string;
+	lastName: string;
+	subject: string;
+	email: string;
+	phone: string;
+	message: string;
+};
