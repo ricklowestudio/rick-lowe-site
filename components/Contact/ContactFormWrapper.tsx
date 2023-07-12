@@ -71,6 +71,10 @@ export default function ContactFormWrapper() {
 
 					if (response?.success === true) {
 						toast.success("Message sent successfully");
+					} else {
+						toast.error(
+							"Something went wrong, please try refreshing the page and starting over."
+						);
 					}
 				} catch (error) {
 					toast.error(
