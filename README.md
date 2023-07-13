@@ -256,6 +256,8 @@ You should have access to the Vercel project for this website with the developer
 
 In order to deploy your changes after they have been merged to the `main` branch, you'll need to open a pull request from the `main` branch that will merge into `production`. After the PR is opened, you'll need to verify that the preview deployment was successfull and your changes are functioning as intended. Once you're satisfied with this, you can merge the pull request into the the `production` branch and Vercel will automatically deploy said changes to production and the site should be updated.
 
+Check out [this video](https://www.loom.com/share/b84f6a02003d41d0b58e9b039ea7893d?sid=23ae5aa2-6007-4f65-9d3c-d73eddc49cc7) for a tutorial on deploying to production on vercel
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
