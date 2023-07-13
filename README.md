@@ -67,6 +67,8 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Watch [this video](https://www.loom.com/share/8f8030a502a842e39c4b50f05f04e213?sid=d6665d28-5999-4f14-84ba-ea7bd8fa9381) for a walkthrough on getting started and commiting your first change.
+
 ## Project Structure
 
 The project is structured using [Next.js's recommended project structure](https://nextjs.org/docs/getting-started/project-structure). Particularly it makes use of the [App Router](https://nextjs.org/docs/app).
