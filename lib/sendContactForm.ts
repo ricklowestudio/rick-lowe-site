@@ -1,3 +1,11 @@
+/**
+ *
+ * @param data
+ * @returns a success or error response from the Contact API route.
+ *
+ * This function is used to send the contact form data to the Contact API route.
+ */
+
 export default async function sendContactForm(
 	data: ContactFormData
 ): Promise<VerifyResponse> {
