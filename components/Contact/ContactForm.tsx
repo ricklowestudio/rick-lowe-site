@@ -138,7 +138,7 @@ function ContactForm({
 						!isDirty || !isValid || isSubmitting ? "cursor-not-allowed" : ""
 					} block w-full rounded-md bg-black px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black`}
 				>
-					Lets talk
+					Let's talk
 				</button>
 			</div>
 		</form>
